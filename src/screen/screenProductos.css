@@ -1,0 +1,10 @@
+.content-productos{
+
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3px;
+    margin-bottom: 35px;
+}
