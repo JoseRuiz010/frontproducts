@@ -5,7 +5,8 @@ import { ContextGlobal } from "./ContextGlobal"
 import { ReducerGlobalState } from "./ReducerGlobalState"
 
 const initialState={
-    products:[]
+    products:[], 
+    user:null
 }
  
 export const StateGlobalProvider = ({children}) => {
@@ -19,11 +20,28 @@ const obtenerProductos=(productos)=>{
     })
 }
 
+const login=()=>{
+    dispatch(
+        {type: TypeReducer.login,
+        payload: {
+            user:' admin'
+        }}
+    )
+}
+const logout=()=>{
+    dispatch(
+        {type: TypeReducer.login,
+        payload: null}
+    )
+}
 
 return(
 <ContextGlobal.Provider value={{
     products:stateGlobal.products,
-    obtenerProductos
+    user: stateGlobal.user,
+    obtenerProductos,
+    login,
+    logout
     }}>
 {children}
 </ContextGlobal.Provider>

@@ -16,6 +16,13 @@ export const ReducerGlobalState = (stateGlobal, action) => {
 
             return stateGlobal;
 
+        case TypeReducer.login:
+
+            return { ...stateGlobal, user: action.payload };
+        case TypeReducer.logout:
+
+            return { ...stateGlobal, user: action.payload };
+
         default:
             return stateGlobal;
     }

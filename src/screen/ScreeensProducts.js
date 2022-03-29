@@ -5,6 +5,7 @@ import { useFetchHooks } from '../hooks/useFetchHooks'
 import { typeFetch } from '../types/TypesFetch'
 import { ContextGlobal } from '../reducers/ContextGlobal'
 import { Card } from '../Components/card/Card'
+import { Outlet } from 'react-router-dom'
 
 export const ScreeensProducts = () => {
      const {data, loading, error }= useFetchHooks(typeFetch.urlProducts)       
@@ -19,6 +20,7 @@ export const ScreeensProducts = () => {
                   <Card {...p} key={p._id}/>
                 ))
           }      
+      
       </div>
     
     
