@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 
-export const useFetchHooks = (url) => {
-    const [data, setdata] = useState()
+export const useFetchHooks = (url,dataBody) => {
+    const [data, setdata] = useState([])
     const [loading, setloading] = useState(true)
     const [error, seterror] = useState(null)
     
-
+ 
    const body= url.method==='GET'?{
     method: url.metodo,
     headers:{
@@ -14,7 +14,10 @@ export const useFetchHooks = (url) => {
       }
    }:{
     method: url.metodo,
-     
+    headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(dataBody)
    }
 
     useEffect(() => {

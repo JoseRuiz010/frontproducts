@@ -1,6 +1,6 @@
 export const TypeRoutes={
     main:'/',
-    users:'/users',
+    misProductos:'/misProductos',
     roles:'/roles',
     perfil:'/me',
     login:'/login'

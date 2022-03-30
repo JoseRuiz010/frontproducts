@@ -31,12 +31,9 @@ export const Navbar = () => {
             return {
                color: isActive? ' rgb(148, 144, 144)':''
             }
-          }} to={TypeRoutes.users}>Usuarios</NavLink></li>
-          <li className='nav-items'><NavLink style={({isActive})=>{
-            return {
-               color: isActive? ' rgb(148, 144, 144)':''
-            }
-          }} to={TypeRoutes.roles}>Roles</NavLink></li>
+          }} to={TypeRoutes.misProductos}>Mis Productos</NavLink></li>
+          
+        
           <li className='nav-items'><NavLink style={({isActive})=>{
             return {
                color: isActive? ' rgb(148, 144, 144)':''
@@ -47,7 +44,11 @@ export const Navbar = () => {
            navigate('/login')
             }}
             className='logout'
-            >Logout</li>
+            > <NavLink style={({isActive})=>{
+              return {
+                 color: isActive? ' rgb(148, 144, 144)':''
+              }
+            }} to={TypeRoutes.login}>Logout</NavLink>  </li>
       </ul>
     
     </nav>

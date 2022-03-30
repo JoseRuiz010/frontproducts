@@ -1,0 +1,30 @@
+.content-Perfil{
+    width: 400px;
+    height: 450px;
+    max-height: 450px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 7px;
+    
+    background: white;
+    padding: 25px;
+}
+
+.center{
+    text-align: center;
+}
+
+.m4{
+    margin: 20px;
+}
+
+.m2{
+    margin: 20px;
+}
+.mb{
+    margin-bottom: 10px;
+}
+.mb-2{
+    margin-bottom: 15px;
+}

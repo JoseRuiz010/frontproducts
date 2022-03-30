@@ -23,7 +23,10 @@ export const ReducerGlobalState = (stateGlobal, action) => {
 
             return { ...stateGlobal, user: action.payload };
 
-        default:
+            case TypeReducer.setError:
+
+                return { ...stateGlobal, error: action.payload };
+            default:
             return stateGlobal;
     }
 }

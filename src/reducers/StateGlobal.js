@@ -6,7 +6,8 @@ import { ReducerGlobalState } from "./ReducerGlobalState"
 
 const initialState={
     products:[], 
-    user:null
+    user:null,
+    error:null
 }
  
 export const StateGlobalProvider = ({children}) => {
@@ -20,17 +21,32 @@ const obtenerProductos=(productos)=>{
     })
 }
 
-const login=()=>{
+const setError=(mensaje)=>{
+    dispatch(
+        {type: TypeReducer.setError,
+        payload: mensaje}
+    )
+}
+
+const login=(user)=>{
+    if(user.messaje) setError(user.messaje)
+    if (!user.user) return
     dispatch(
         {type: TypeReducer.login,
-        payload: {
-            user:' admin'
-        }}
+        payload: user}
+    )
+    dispatch(
+        {type: TypeReducer.setError,
+        payload: null}
     )
 }
 const logout=()=>{
     dispatch(
         {type: TypeReducer.login,
+        payload: null}
+    )
+    dispatch(
+        {type: TypeReducer.setError,
         payload: null}
     )
 }
@@ -39,6 +55,7 @@ return(
 <ContextGlobal.Provider value={{
     products:stateGlobal.products,
     user: stateGlobal.user,
+    error:stateGlobal.error,
     obtenerProductos,
     login,
     logout
