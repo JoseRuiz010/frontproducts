@@ -1,0 +1,58 @@
+.imgCarrito{
+    text-align: center;
+    color: white;
+    background-color:rgb(10, 10, 53);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: relative;
+    
+}
+
+.imgCarrito>i{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    margin: auto;
+    cursor:pointer;
+ 
+}
+
+.imgCarrito>i:hover{
+    color: rgb(136, 135, 133);
+    transition: all 0.5 ease-in-out;
+}
+.itemsCarrito{
+text-decoration: none;
+list-style: none;
+margin: 13px;
+}
+
+.cuerpoItems{
+    border: solid 1px;
+    padding-top:35px;
+    padding-bottom:35px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    background: rgb(10, 10, 53);
+    color: white;
+    font-weight: bold;
+    width: 300px;
+    min-width: 300px;
+    min-height: 150px;
+}
+.cerrar-btn {
+    position: absolute;
+    top :15px;
+    right: 25px;
+}
+
+.tacho:hover{
+ 
+ color: rgb(247, 144, 144);
+}
+.tacho{
+    color: red;
+    cursor:pointer
+   }

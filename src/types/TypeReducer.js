@@ -3,5 +3,7 @@ export const TypeReducer={
     getProductos:'GET-PRODUCTOS',
     login:'LOGIN',
     logout:'LOGOUT',
-    setError:'SET-ERROR'
+    setError:'SET-ERROR',
+    agregarAlCarrito:'AGREGARALCARRITO',
+    quitarAlCarrito:'QUITARALCARRITO'
 }

@@ -6,6 +6,7 @@ import { typeFetch } from '../types/TypesFetch'
 import { ContextGlobal } from '../reducers/ContextGlobal'
 import { Card } from '../Components/card/Card'
 import { Outlet } from 'react-router-dom'
+import { Carrito } from '../Components/carrito/Carrito'
 
 export const ScreeensProducts = () => {
      const {data, loading, error }= useFetchHooks(typeFetch.urlProducts)       
@@ -14,13 +15,15 @@ export const ScreeensProducts = () => {
     if(loading) return <div>Cargando...</div>
 
   return (
-      <div className='content-productos'>
+    <div className='content-productos'>
+        <div className="carrito-icon">
+          <Carrito />
+          </div>
             {
               data.map(p=>(
-                  <Card {...p} key={p._id}/>
+                  <Card producto={p} key={p._id}/>
                 ))
           }      
-      
       </div>
     
     

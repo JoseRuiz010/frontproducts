@@ -1,4 +1,4 @@
-.content-productos{
+.content-productos {
 
     width: 90%;
     margin: auto;
@@ -7,4 +7,11 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 3px;
     margin-bottom: 35px;
+
+}
+
+.carrito-icon {
+    position: absolute;
+    top: 75px;
+    right: 10px;
 }

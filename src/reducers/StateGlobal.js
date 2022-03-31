@@ -7,7 +7,8 @@ import { ReducerGlobalState } from "./ReducerGlobalState"
 const initialState={
     products:[], 
     user:null,
-    error:null
+    error:null,
+    carrito:[]
 }
  
 export const StateGlobalProvider = ({children}) => {
@@ -50,15 +51,32 @@ const logout=()=>{
         payload: null}
     )
 }
-
+const AgregarAlCarrito=(producto)=>{
+    dispatch(
+        {type: TypeReducer.agregarAlCarrito,
+        payload: producto}
+    )
+   
+}
+const QuitarAlCarrito=(producto)=>{
+  console.log(producto);
+ dispatch(
+     {type: TypeReducer.quitarAlCarrito,
+         payload: producto}
+     )
+    
+}
 return(
 <ContextGlobal.Provider value={{
     products:stateGlobal.products,
     user: stateGlobal.user,
     error:stateGlobal.error,
+    carrito:stateGlobal.carrito,
     obtenerProductos,
     login,
-    logout
+    logout, 
+    AgregarAlCarrito,
+    QuitarAlCarrito
     }}>
 {children}
 </ContextGlobal.Provider>
