@@ -8,7 +8,10 @@ const initialState={
     products:[], 
     user:null,
     error:null,
-    carrito:[]
+    carrito:{
+        prod:[],
+        total:0
+    }
 }
  
 export const StateGlobalProvider = ({children}) => {

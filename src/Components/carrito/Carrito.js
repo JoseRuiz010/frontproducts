@@ -31,21 +31,22 @@ const ContentCarrito = ({changeVisible}) => {
            <i className="fa-solid fa-xmark cerrar-btn" onClick={changeVisible}></i>
 
             <div className="Carrito">
+                <h3 className='titleCarrito'>Carrito</h3>
                 <ul>
                     {
-                     carrito.length===0&&<div>No hay productos seleccionado</div>    
-                    }
-                    {
-                        carrito.map(c =>(
-                            <li className='itemsCarrito'>{c.producto.name} -{c.cantidad}
-                            <i  className="fa-solid fa-trash tacho" onClick={()=>QuitarAlCarrito(c.producto)}></i>
-                            </li>
+                     carrito.prod.length===0?<div style={{color:'red'}}>No hay productos seleccionado</div>:
+                     carrito.prod.map(c =>(
+                         <li className='itemsCarrito'>{c.producto.name} -{c.cantidad}
+                         <i  className="fa-solid fa-trash tacho" onClick={()=>QuitarAlCarrito(c.producto)}></i>
+                         </li>
 
-                        ))
+                     ))
+
+                    
                     }
                 </ul>
                 <br />
-                <h4>Total: </h4>
+                <h4>Total: ${carrito.total}</h4>
             </div>
         </div >
     )

@@ -25,17 +25,26 @@ export const ReducerGlobalState = (stateGlobal, action) => {
             return { ...stateGlobal, error: action.payload };
         case TypeReducer.agregarAlCarrito:
             return { ...stateGlobal, 
-                carrito: stateGlobal.carrito.filter(c=>c.producto===action.payload).length<1?
-                [...stateGlobal.carrito,{producto:action.payload, cantidad:1}]
-                :
-                stateGlobal.carrito.map(c=>c.producto===action.payload?{...c,cantidad:c.cantidad+1} :c) };
+                carrito:{...stateGlobal.carrito,
+                    prod:  stateGlobal.carrito.prod.filter(c=>c.producto===action.payload).length<1?
+                    [...stateGlobal.carrito.prod,{producto:action.payload, cantidad:1}]
+                    :stateGlobal.carrito.prod.map(c=>c.producto===action.payload?{...c,cantidad:c.cantidad+1} :c),
+                    
+                    total:stateGlobal.carrito.total+action.payload.price
+                
+                }
+                
+                }
         case TypeReducer.quitarAlCarrito:
-            return { ...stateGlobal,
-                carrito: stateGlobal.carrito.find(c=>c.producto===action.payload).cantidad===1?
-                stateGlobal.carrito.filter(p=>p.producto!==action.payload)
-                :
-                stateGlobal.carrito.map(c=>c.producto===action.payload?{...c,cantidad:c.cantidad-1} :c) };
-
+            return { ...stateGlobal, 
+                carrito:{...stateGlobal.carrito,
+                    prod:  stateGlobal.carrito.prod.find(c=>c.producto===action.payload).cantidad===1?
+                    stateGlobal.carrito.prod.filter(p=>p.producto!==action.payload)
+                    :stateGlobal.carrito.prod.map(c=>c.producto===action.payload?{...c,cantidad:c.cantidad-1} :c) ,
+                
+                    total:stateGlobal.carrito.total-action.payload.price
+                }
+                }
 
             default:
             return stateGlobal;
