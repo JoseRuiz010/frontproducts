@@ -49,10 +49,9 @@ nav{
     color: #FFFF;
     font-size: 30px;
     line-height: 50%;
+    cursor: pointer;
 }
-.nav-items>i{
-
-}
+ 
 
 .listas-navbar-active{
     left: 0;
