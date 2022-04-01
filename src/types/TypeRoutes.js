@@ -3,5 +3,6 @@ export const TypeRoutes={
     misProductos:'/misProductos',
     roles:'/roles',
     perfil:'/me',
-    login:'/login'
+    login:'/login',
+    newProduct:'/newProduct'
 }
