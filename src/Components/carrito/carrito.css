@@ -1,7 +1,7 @@
 .imgCarrito{
     text-align: center;
     color: white;
-    background-color:rgb(10, 10, 53);
+    background-color:#440f87;
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -30,12 +30,12 @@ margin: 13px;
 
 .cuerpoItems{
     border: solid 1px;
-    padding-top:35px;
-    padding-bottom:35px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top:25px;
+    padding-bottom:25px;
+    padding-left: 5px;
+    padding-right:5px;
     border-radius: 10px;
-    background: rgb(10, 10, 53);
+    background: #440f87;
     color: white;
     font-weight: bold;
     width: 300px;
@@ -60,4 +60,36 @@ margin: 13px;
 .titleCarrito{
     text-align: center;
     margin-bottom: 10px;
+     
 }
+.table{
+      text-align: center;
+}
+thead th:nth-child(1) {
+    width: 60%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 20%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 20%;
+  }
+  th, td {
+    padding: 2px;
+  }
+
+.division{
+    margin-top: 15px;
+}
+.total{
+    width: 80%; 
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    
+    justify-content: space-around;
+}
+
+ 

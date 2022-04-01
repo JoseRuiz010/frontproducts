@@ -9,9 +9,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-   
+    background-color:#440f87;
+    color: white;  
+    border: none;
+    box-shadow: 1px 1px 6px  #6416c4;
 }
-
+ 
 .title-sesion{
     text-align: center;
     font-size: 30px;
@@ -28,11 +31,23 @@
     padding: 15px;
 }
 
-button{
+.buttonLogin{
     height: 35px;
     border-radius: 7px;
     border: none;
-    width: 100%;
+    width: 80%;
+    background: #440f87;
+    border: solid 1px white;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+.buttonLogin:hover{
+background: #FFFF;
+color: #440f87;
+transition: all .3s ease-in;
 }
 .inputs{
     text-align: center;

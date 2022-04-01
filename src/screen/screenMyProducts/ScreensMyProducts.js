@@ -20,11 +20,11 @@ export const ScreensMyProducts = () => {
     if(productos.length<1) return <div>Cargando...</div>
   return(
     <div>
-      <h1 className='title-My-Product'>My products</h1>
+      <h1 className='title-My-Product'>Mis Productos</h1>
       <div className='content-productos'>
             {
               productos.map(p=>(
-                  <Card {...p} key={p._id}/>
+                  <Card producto={p} key={p._id}/>
                 ))
           }      
       

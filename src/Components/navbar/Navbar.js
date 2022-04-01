@@ -14,6 +14,8 @@ export const Navbar = () => {
 
   return (
     <nav>
+      <div className="nav">
+
       <h4 className='logo'>Logo</h4>
       <div className="menu-icon" 
       onClick={()=>handleClick()}>
@@ -22,35 +24,33 @@ export const Navbar = () => {
 
       <ul className={`listas  ${active? 'listas-navbar':'listas-navbar-active'}`}>
            
-          <li className='nav-items'><NavLink style={({isActive})=>{
+          <li className='nav-items' onClick={()=>handleClick()}><NavLink style={({isActive})=>{
             return {
                color: isActive? ' rgb(148, 144, 144)':''
-            }
-          }} to={TypeRoutes.main}>Productos</NavLink></li>
-          <li className='nav-items'><NavLink style={({isActive})=>{
+              }
+            }} to={TypeRoutes.main} >Productos</NavLink></li>
+          <li className='nav-items' onClick={()=>handleClick()} ><NavLink style={({isActive})=>{
             return {
                color: isActive? ' rgb(148, 144, 144)':''
             }
           }} to={TypeRoutes.misProductos}>Mis Productos</NavLink></li>
           
         
-          <li className='nav-items'><NavLink style={({isActive})=>{
+          <li className='nav-items' onClick={()=>handleClick()}><NavLink style={({isActive})=>{
             return {
-               color: isActive? ' rgb(148, 144, 144)':''
+              color: isActive? ' rgb(148, 144, 144)':''
             }
           }} to={TypeRoutes.perfil}>Perfil</NavLink></li>
-          <li onClick={()=>{
-            logout()
-           navigate('/login')
-            }}
-            className='logout'
-            > <NavLink style={({isActive})=>{
-              return {
-                 color: isActive? ' rgb(148, 144, 144)':''
-              }
-            }} to={TypeRoutes.login}>Logout</NavLink>  </li>
+         
+         
+          <li 
+          onClick={()=>{logout();navigate('/login');handleClick()}}
+          className='logout'
+          >  
+<i class="fa-solid fa-arrow-right-from-bracket"></i>           </li>
       </ul>
     
+          </div>
     </nav>
   )
 }

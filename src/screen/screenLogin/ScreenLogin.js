@@ -7,7 +7,7 @@ import { typeFetch } from '../../types/TypesFetch'
 import './screenLogin.css'
 export const ScreenLogin = () => {
 
-  const { login,error } = useContext(ContextGlobal)
+  const { login, error } = useContext(ContextGlobal)
 
   const { onchange, data } = useForm({
     email: 'admin2@gmail.com',
@@ -26,14 +26,14 @@ export const ScreenLogin = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-   }
-   console.log(body);
-      return  await fetch(url.url, body).then(res => res.json())
+    }
+    console.log(body);
+    return await fetch(url.url, body).then(res => res.json())
   }
 
 
 
-  const LoginUser = async() => {
+  const LoginUser = async () => {
 
     const user = await getData(typeFetch.urlPostLogin, data)
     console.log(user);
@@ -41,19 +41,22 @@ export const ScreenLogin = () => {
   }
 
   return (
-    <div className='container-login'>
-      <h3 className='title-sesion'>Bienvenido</h3>
-   {
-     error&&<Menssaje menssaje={error}/>
-   }
-      <div className="inputs">
-        <input type="text" onChange={handleChange} name="email" className="input" value={data.email} />
-        <input type="password" onChange={handleChange} name="password" className="input" value={data.password} />
-        <button onClick={() => LoginUser()}>Login</button>
+    <div className="fondo-login">
+
+      <div className='container-login'>
+        <h3 className='title-sesion'>Bienvenido</h3>
+        {
+          error && <Menssaje menssaje={error} />
+        }
+        <div className="inputs">
+          <input type="text" onChange={handleChange} name="email" className="input" value={data.email} />
+          <input type="password" onChange={handleChange} name="password" className="input" value={data.password} />
+          <button className='buttonLogin' onClick={() => LoginUser()}>Login</button>
+        </div>
+        <p className='registrarme'>Registrarse</p>
+
+
       </div>
-      <p className='registrarme'>Registrarse</p>
-
-
     </div>
   )
 }
